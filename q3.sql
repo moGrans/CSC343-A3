@@ -53,26 +53,3 @@ INSERT INTO q3
 	FROM yyz_model yyzm JOIN Model m
             ON yyzm.model_id = m.model_id
     ORDER BY yyzm.num_rent [DESC], m.name;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- 
--- You should order by the total number of times the car model was rented (descending) and model name (ascending).
- 
