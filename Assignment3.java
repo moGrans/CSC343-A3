@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Assignment3 extends JDBCSubmission {
 
     public Assignment3() throws ClassNotFoundException {
-        System.out.println("Connecting to Database...");
+
         Class.forName("org.postgresql.Driver");
     }
 
@@ -46,11 +46,11 @@ public class Assignment3 extends JDBCSubmission {
 
     @Override
     public ElectionResult presidentSequence(String countryName) {
-        List<Integer> ids = ArrayList<Integer>();
-        List<String> parties = ArrayList<String>();
+        List<Integer> ids = new ArrayList<Integer>();
+        List<String> parties = new ArrayList<String>();
         ElectionResult result = null;
 
-        String = sql;
+        String sql;
 
         sql = "SELECT C.name as country_name, pp.id as president_id, p.name as party_name" +
                 "FROM politician_president PP JOIN country C ON PP.country_id = C.id" +
@@ -64,11 +64,11 @@ public class Assignment3 extends JDBCSubmission {
                 System.out.println("Party name: " +parties.add(rs.getString("party_name")));
             }
 
-            result = ElectionResult(ids, parties);
+            result = new ElectionResult(ids, parties);
         } catch(SQLException se) {
             se.printStackTrace();
             return null;
-        } catch(Exceptio e) {
+        } catch(Exception e) {
             e.printStackTrace();
             return null;
         }
@@ -78,8 +78,32 @@ public class Assignment3 extends JDBCSubmission {
 
     @Override
     public List<Integer> findSimilarParties(Integer partyId, Float threshold) {
-	//Write your code here.
-        return null;
+        List<Integer> result = new ArrayList<Integer>();
+        String initDesc = null;
+
+        String sql = null;
+
+        sql = "SELECT id, description FROM party WHERE id = " + partyId.toString();
+
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+
+            initDesc = rs.getString("description");
+
+            sql = "SELECT id, description FROM party";
+
+            rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+                if ( similarity(initDesc, rs.getString("description")) <= threshold ) {
+                    result.add(rs.getInt("id"));
+                }
+            }
+        } catch (SQLException se){
+            se.printStackTrace();
+        }
+        return result;
+
     }
 
     public static void main(String[] args) throws Exception {
