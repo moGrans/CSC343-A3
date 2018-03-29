@@ -20,8 +20,8 @@ customer_email VARCHAR(100)
 DROP VIEW IF EXISTS changed_resv CASCADE;
 CREATE VIEW changed_resv AS
 	SELECT *
-	FROM Reserveration
-	WHERE from_date < current_timestamp() AND from_date > (current_timestamp() - (interval '1 day' * 540)) AND old_reservation <> NULL;
+	FROM Reservation
+	WHERE from_date < current_timestamp AND from_date > (current_timestamp - (interval '1 day' * 540)) AND old_reservation is not NULL;
 
 --------------------------------------------------------------------------
 -- Organize these reservation according to customers and filter to find one's who changed at least 2 times
