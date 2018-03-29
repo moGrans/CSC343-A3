@@ -33,7 +33,7 @@ INSERT INTO Rentalstation VALUES
 	(1006,'SuperCar Ottawa Airport','216 Airport Rd','K1V9B4','Ottawa'),
 	(1007,'SuperCar Central Station','895 Rue Mansfield','H3B4G1','Montreal'),
 	(1008,'SuperCar North Montreal','2351 Rue Masson','H1Y1V8','Montreal'),
-	(1009,'SuperCar West Montreal','7000 Avenue Van Horne','H3S2B2','Montreal'),;
+	(1009,'SuperCar West Montreal','7000 Avenue Van Horne','H3S2B2','Montreal');
 INSERT INTO Car VALUES
 	(101,'torc566',1001,1),
 	(102,'torc212',1001,8),
