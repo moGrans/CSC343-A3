@@ -51,7 +51,7 @@ INSERT INTO q4
 	SELECT *
 	FROM changed_customer_thirty;
 
-
+SELECT * FROM q4;
 
 
 

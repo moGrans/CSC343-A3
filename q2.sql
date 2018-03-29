@@ -92,3 +92,5 @@ INSERT INTO q2
             ON ns.customer_email = c.email
     ORDER BY ns.num_share_reservation DESC, c.email
     LIMIT 2;
+
+SELECT * FROM q2;

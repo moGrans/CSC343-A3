@@ -59,3 +59,5 @@ INSERT INTO q3
             ON pm.model_id = m.id
     ORDER BY pm.num_rent DESC, m.name
     LIMIT 1;
+
+SELECT * FROM q3;

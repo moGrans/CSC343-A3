@@ -129,3 +129,5 @@ INSERT INTO q1
             ON cr.customer_email = c.email
     ORDER BY cr.cancel_ratio DESC, c.email
     Limit 2;
+
+SELECT * FROM q1;
