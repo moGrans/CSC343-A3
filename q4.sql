@@ -8,13 +8,6 @@ create table q4(
 customer_email VARCHAR(100)
 );
 
-
-
-
--- Since we don't have a timestamp indicating when the reservation was made in this schema, you may use FromDate for this query.
--- Please note that it's in the past 18 month with reference to the time of query execution (i.e. server time).
--- You may find some of the Date/Time functions and operators in this PostgreSQL documentation page helpful.
-
 --------------------------------------------------------------------------
 --------------------------	Intermediate steps	--------------------------
 --------------------------------------------------------------------------
